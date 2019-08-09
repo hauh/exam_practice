@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   is_power_of_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 19:59:48 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/09 18:15:39 by smorty           ###   ########.fr       */
+/*   Created: 2019/08/09 21:09:31 by smorty            #+#    #+#             */
+/*   Updated: 2019/08/09 21:20:28 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+int	is_power_of_2(unsigned int n)
 {
-	char *p;
+	int size;
+	int bits;
 
-	if (argc > 1)
-	{
-		p = *(++argv);
-		while (*p)
-			++p;
-		write(1, *argv, p - *argv);
-	}
-	return (write(1, "\n", 1) - 1);
+	size = sizeof(unsigned int) * 8;
+	bits = 0;
+	while (size--)
+		if ((n >> size) & 1)
+			++bits;
+	return (bits == 1 ? 1 : 0);
 }

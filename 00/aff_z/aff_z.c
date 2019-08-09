@@ -6,7 +6,7 @@
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 20:30:20 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/08 20:32:34 by smorty           ###   ########.fr       */
+/*   Updated: 2019/08/09 18:16:02 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
-	return (write(1, "z\n", 2));
+	return (write(1, "z\n", 2) - 2);
 }

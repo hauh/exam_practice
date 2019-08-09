@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 19:59:48 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/09 18:15:39 by smorty           ###   ########.fr       */
+/*   Created: 2019/08/09 20:34:03 by smorty            #+#    #+#             */
+/*   Updated: 2019/08/09 21:08:43 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char *p;
-
-	if (argc > 1)
+	while (*s1 || *s2)
 	{
-		p = *(++argv);
-		while (*p)
-			++p;
-		write(1, *argv, p - *argv);
+		if ((unsigned char)*s1 != (unsigned char)*s2)
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		++s1;
+		++s2;
 	}
-	return (write(1, "\n", 1) - 1);
+	return (0);
 }

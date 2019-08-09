@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 19:59:48 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/09 18:15:39 by smorty           ###   ########.fr       */
+/*   Created: 2019/08/09 20:51:52 by smorty            #+#    #+#             */
+/*   Updated: 2019/08/09 21:21:59 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+char	*ft_strrev(char *str)
 {
-	char *p;
+	char *left;
+	char *right;
+	char swap;
 
-	if (argc > 1)
+	if (str)
 	{
-		p = *(++argv);
-		while (*p)
-			++p;
-		write(1, *argv, p - *argv);
+		left = str;
+		right = str;
+		while (*right)
+			++right;
+		while (left < right--)
+		{
+			swap = *left;
+			*left = *right;
+			*right = swap;
+			++left;
+		}
 	}
-	return (write(1, "\n", 1) - 1);
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 22:44:18 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/08 22:49:15 by smorty           ###   ########.fr       */
+/*   Updated: 2019/08/09 18:18:19 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	main(int argc, char **argv)
 		while (p != *argv)
 			write(1, --p, 1);
 	}
-	return (write(1, "\n", 1));
+	return (write(1, "\n", 1) - 1);
 }

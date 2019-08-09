@@ -6,7 +6,7 @@
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 19:56:49 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/08 19:58:29 by smorty           ###   ########.fr       */
+/*   Updated: 2019/08/09 18:16:38 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	main(void)
 {
-	return (write(1, "aBcDeFgHiJkLmNoPqRsTuVwXyZ\n", 27));
+	return (write(1, "aBcDeFgHiJkLmNoPqRsTuVwXyZ\n", 27) - 27);
 }

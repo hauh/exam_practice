@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   swap_bits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 19:59:48 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/09 18:15:39 by smorty           ###   ########.fr       */
+/*   Created: 2019/08/09 19:06:51 by smorty            #+#    #+#             */
+/*   Updated: 2019/08/09 19:09:31 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+unsigned char	swap_bits(unsigned char octet)
 {
-	char *p;
-
-	if (argc > 1)
-	{
-		p = *(++argv);
-		while (*p)
-			++p;
-		write(1, *argv, p - *argv);
-	}
-	return (write(1, "\n", 1) - 1);
+	return ((octet >> 4) | (octet << 4));
 }

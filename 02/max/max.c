@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 19:59:48 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/09 18:15:39 by smorty           ###   ########.fr       */
+/*   Created: 2019/08/09 19:37:29 by smorty            #+#    #+#             */
+/*   Updated: 2019/08/09 19:45:03 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+int	max(int *tab, unsigned int len)
 {
-	char *p;
+	int max;
 
-	if (argc > 1)
+	if (!len)
+		return (0);
+	max = *tab;
+	while (len--)
 	{
-		p = *(++argv);
-		while (*p)
-			++p;
-		write(1, *argv, p - *argv);
+		if (*tab > max)
+			max = *tab;
+		++tab;
 	}
-	return (write(1, "\n", 1) - 1);
+	return (max);
 }

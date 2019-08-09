@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*   reverse_bits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 19:59:48 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/09 18:15:39 by smorty           ###   ########.fr       */
+/*   Created: 2019/08/09 18:19:56 by smorty            #+#    #+#             */
+/*   Updated: 2019/08/09 19:05:19 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+unsigned char	reverse_bits(unsigned char octet)
 {
-	char *p;
+	unsigned char	rev;
+	int				i;
 
-	if (argc > 1)
+	rev = 0;
+	i = 8;
+	while (i--)
 	{
-		p = *(++argv);
-		while (*p)
-			++p;
-		write(1, *argv, p - *argv);
+		rev <<= 1;
+		rev |= octet & 1;
+		octet >>= 1;
 	}
-	return (write(1, "\n", 1) - 1);
+	return (rev);
 }

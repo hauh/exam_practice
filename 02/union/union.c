@@ -6,7 +6,7 @@
 /*   By: smorty <smorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/09 00:23:47 by smorty            #+#    #+#             */
-/*   Updated: 2019/08/09 00:37:31 by smorty           ###   ########.fr       */
+/*   Updated: 2019/08/09 21:23:11 by smorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,11 @@ int			main(int argc, char **argv)
 		p1 = *(argv + 1);
 		while (*p1)
 		{
-			if (!was_before(*argv, p0, *p1) && !was_before(*(argv + 1), p1, *p1))
+			if (!was_before(*argv, p0, *p1)
+			&& !was_before(*(argv + 1), p1, *p1))
 				write(1, p1, 1);
 			++p1;
 		}
 	}
-	return (write(1, "\n", 1));
+	return (write(1, "\n", 1) - 1);
 }
